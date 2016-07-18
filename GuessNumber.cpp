@@ -61,5 +61,7 @@ int main() {
     Solution s;
     int result = s.guessNumber(6);
     cout << result << endl;
+
+    getchar();
     return 0;
 }
