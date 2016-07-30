@@ -13,13 +13,14 @@ int guess(int num);
 class Solution {
 public:
     int guessNumber(int n) {
-        int count = 100;
-        int begin = 0;
-        int end = n + 1;
+        
+        unsigned int begin = 0;     // 必须用unsigned, 可能存在很大的输入数
+        unsigned int end = n + 1;
+        cout << "end: " << end <<endl;
         int myGuessNumber = (begin + end) / 2;
         int guessResult = guess(myGuessNumber);
         
-        while(guessResult != 0 && begin <= end && count > 0) {
+        while(guessResult != 0 && begin < end) {
             if(guessResult == 1) {
                 cout <<  "+++" << myGuessNumber << endl;
                 begin = myGuessNumber;
@@ -27,10 +28,10 @@ public:
             else {
                 cout << "---" << myGuessNumber << endl;
                 end = myGuessNumber;
+                
             }
             myGuessNumber = (begin + end) / 2;
             guessResult = guess(myGuessNumber);
-            --count;
             
         }
         
@@ -39,8 +40,6 @@ public:
         else
             return -1;
     }
-    
-    // 当guess结果为-1时
 
 };
 
@@ -61,7 +60,5 @@ int main() {
     Solution s;
     int result = s.guessNumber(6);
     cout << result << endl;
-
-    getchar();
     return 0;
 }
