@@ -32,6 +32,17 @@ public:
 	
 	
 	vector<vector<int> >& TwoSum(vector<int>& nums, int target) {
+		
+		quickSort(nums, 0, nums.size());
+		print_vector(nums);
+
+		result = findTwo(nums, target);
+
+		
+	
+
+	// 基本的二元寻找，给定有序数组，寻找相加等于target的值
+	vector<vector<int> >& findTwo(vector<int>& nums, int target) {
 		if(nums.empty() || nums.size() < 2) {
 			return result;
 		}
@@ -39,16 +50,14 @@ public:
 		int low = 0;
 		int high = nums.size() - 1;
 		vector<int> tmp;
-
-		quickSort(nums, 0, nums.size());
-		print_vector(nums);
+		vector<vector<int> > res;
 
 		while(low < high) {
 			if(nums[low]+nums[high] == target) {
+				tmp.clear();
 				tmp.push_back(nums[low]);
 				tmp.push_back(nums[high]);
-				result.push_back(tmp);
-				tmp.clear();
+				res.push_back(tmp);
 				while(nums[low+1] == nums[low] && low < high) 
 					low++;
 				while(nums[high-1] == nums[high] && high > low) 
@@ -57,20 +66,17 @@ public:
 				high--;
 			}
 
-			else if(nums[low] + nums[high] > target) {
+			else if(nums[low] + nums[high] > target) 
 				high--;
-			}
-
-			else {
+			else 
 				low++;
-			}
 		}
 
-		return result;
+		return res;
 	}
 	
 	
-	void print_vector(vector<int>& nums) {
+	inline void print_vector(vector<int>& nums) const{
 		for(int i = 0; i < nums.size(); ++i) {
 			cout << nums[i] << "\t";
 		}
