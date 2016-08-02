@@ -1,81 +1,55 @@
 #include <iostream>
 #include <vector>
+#include <map>
 #include <cstdio>
+#include <iterator>
+#include <algorithm>
 
 
 using namespace std;
 
-class Solution_kSum {
-
+// 4 sum 的hash实现
+class Solution {
 public:
-	vector<vector<int> >& ThreeSum(vector<int>& nums, int target) {
-		if(nums.empty() || nums.size() < 3) {
-			return result;
-		}
-		
-		quickSort(nums, 0, nums.size());
-		print_vector(nums);
-		
-		for(size_t i = 0; i < nums.size(); ++i){
-			int choosen = nums[i];
-			vector<vector<int> > tmp_result = TwoSum(nums, target-choosen);
-			for(size_t idx = 0; idx < tmp_result.size(); ++idx) {
-				tmp_result[idx].push_back(choosen);
-				result.push_back(tmp_result[idx]);
+	vector<vector<int> > fourSum(vector<int>& nums, int target) {
+		store(nums);
+		map<int, vector<pair<int, int> > >::iterator iter_beg = mp.begin();
+		map<int, vector<pair<int, int> > >::iterator iter_end = mp.end();
+		map<int, vector<pair<int, int> > >::iterator iter1;
+		map<int, vector<pair<int, int> > >::iterator iter2;
+
+		vector<int> tmp_vec;
+		for(iter1 = iter_beg; iter1 != iter_end; ++iter1) {
+			iter2 = mp.find(target - iter1->first);
+			
+			// 只查找键较大的, 防止重复查找
+			if(iter1->first > iter2->first)
+				continue;
+			
+			if(iter2 != iter_end) {
+				for(size_t i = 0; i < iter1->second.size(); ++i){
+					for(size_t j = 0; j < iter1->second.size(); ++j){
+						int a = (iter1->second[i]).first;
+						int b = (iter1->second[i]).second;
+						int c = (iter2->second[j]).first;
+						int d = (iter2->second[j]).second;
+						tmp_vec.clear();
+						tmp_vec.push_back(a);
+						tmp_vec.push_back(b);
+						tmp_vec.push_back(c);
+						tmp_vec.push_back(d);
+						print_vector(tmp_vec);
+						result.push_back(tmp_vec);
+					}
+				}
 			}
 		}
 
 		return result;
+
 	}
 	
-	
-	
-	
-	vector<vector<int> >& TwoSum(vector<int>& nums, int target) {
-		
-		quickSort(nums, 0, nums.size());
-		print_vector(nums);
 
-		result = findTwo(nums, target);
-
-		
-	
-
-	// 基本的二元寻找，给定有序数组，寻找相加等于target的值
-	vector<vector<int> >& findTwo(vector<int>& nums, int target) {
-		if(nums.empty() || nums.size() < 2) {
-			return result;
-		}
-
-		int low = 0;
-		int high = nums.size() - 1;
-		vector<int> tmp;
-		vector<vector<int> > res;
-
-		while(low < high) {
-			if(nums[low]+nums[high] == target) {
-				tmp.clear();
-				tmp.push_back(nums[low]);
-				tmp.push_back(nums[high]);
-				res.push_back(tmp);
-				while(nums[low+1] == nums[low] && low < high) 
-					low++;
-				while(nums[high-1] == nums[high] && high > low) 
-					high--;
-				low++;
-				high--;
-			}
-
-			else if(nums[low] + nums[high] > target) 
-				high--;
-			else 
-				low++;
-		}
-
-		return res;
-	}
-	
-	
 	inline void print_vector(vector<int>& nums) const{
 		for(int i = 0; i < nums.size(); ++i) {
 			cout << nums[i] << "\t";
@@ -84,70 +58,63 @@ public:
 	}
 
 
-	void quickSort(vector<int>& nums, int begin, int end) {
-		if(end - begin <= 1)
+	void store(vector<int>& nums) {
+		if(nums.size() < 2)
 			return;
-
-		//cout << begin << "\t" << end << endl;
-		int low = begin, high = end;
-		int key_idx = low;	// 记录key值位置
-		
-		while(low < high) {
-			while(--high > low) {
-				if(nums[high] <= nums[key_idx]) { 
-					swap(nums[high], nums[key_idx]);
-					key_idx = high;
-					break;
-				}
-			}
-
-			while(++low < high) {
-				if(nums[low] >= nums[key_idx]) {
-					swap(nums[low], nums[key_idx]);
-					key_idx = low;
-					break;
-				}
+		sort(nums.begin(), nums.end());
+		for(size_t i = 0; i < nums.size(); ++i) {
+			if(i > 0 && nums[i-1] == nums[i])
+				continue;
+			for(size_t j = i + 1; j < nums.size(); ++j) {
+				if(j > i + 1 && nums[j-1] == nums[j])
+					continue;
+				pair<int, int> p(nums[i], nums[j]);
+				mp[nums[i] + nums[j]].push_back(make_pair(nums[i], nums[j]));
 			}
 		}
-		//cout << "###" << key_idx << endl;
-		//cout << "****" << low  << "\t" << high << endl;
-		//print_vector(nums);
-		quickSort(nums, begin, low);
-		quickSort(nums, low, end);
+
+		for(size_t i = 0; i < nums.size(); ++i) {
+			cnt_map[nums[i]]++;
+		}
+
+		print_mp(mp);
+	
+	}
+	
+
+	void print_mp(map<int, vector<pair<int, int> > > &mp) {
+		
+		map<int, vector<pair<int, int> > >::iterator iter_beg = mp.begin();
+		map<int, vector<pair<int, int> > >::iterator iter_end = mp.end();
+		map<int, vector<pair<int, int> > >::iterator iter;
+
+		for(iter = iter_beg; iter != iter_end; ++iter) {
+			cout << "*SUM = " << iter->first << endl;
+			for(size_t i = 0; i < iter->second.size(); ++i) {
+				cout << (iter->second)[i].first << "\t" << (iter->second)[i].second << endl;
+			}
+		}
+
 	}
 
-
-	inline void swap(int &a, int &b){
-		int tmp = a;
-		a = b;
-		b = tmp;
-	}
 
 private:
 	vector<vector<int> > result;
+	map<int, vector<pair<int, int> > > mp;
+	map<int, int> cnt_map;
 };
 
-
 int main() {
-	vector<vector<int> > res;
-	Solution_kSum sk;
-	int target = 2;
 
-	int array[] = {1,-1,-1,1,2,0,-2,3};
+	Solution s;
+
+	int array[] = {-2,-1,1,2,0,-2,1};
 	int length = sizeof(array) / sizeof(int);
 	vector<int> vec(array, array+length);
-	
-	res = sk.ThreeSum(vec, 0);
-	
-	cout << "result: " << endl;
-	for(int i = 0; i < res.size(); ++i) {
-		sk.print_vector(res[i]);
-	}
-	
-	cout << "run successfully!" << endl;
+	int target = 0;
+
+	vector<vector<int> > r = s.fourSum(vec, target);
+
 	getchar();
 	return 0;
 }
-
-	
-
