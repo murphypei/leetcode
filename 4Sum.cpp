@@ -1,3 +1,4 @@
+// 4 sum 的hash实现
 #include <iostream>
 #include <vector>
 #include <map>
@@ -8,7 +9,12 @@
 
 using namespace std;
 
-// 4 sum 的hash实现
+/**
+ * 四个数看做两组数相加, 每组两个数
+ * 将数两两组合, 将两个数和相同的组合存入vector中, 然后map键为两个数的和, 值为vector
+ * 在map中寻找组合
+ * 注意相同元素的处理
+ */
 class Solution {
 public:
 	vector<vector<int> > fourSum(vector<int>& nums, int target) {

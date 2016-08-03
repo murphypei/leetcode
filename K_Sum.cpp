@@ -1,7 +1,17 @@
+// K sum的求和问题：给一组N个数字(比如 vector<int> num), 然后给一个常数(比如 int target) ，
+// 我们的goal是在这一堆数里面找到K个数字，使得这K个数字的和等于target。
+
+
 #include <iostream>
 #include <vector>
 #include <cstdio>
 
+/**
+ * 求解思路, 最常规的是2sum, 思路是将数组排序, 然后分别从头和尾开始遍历, 将这两个标志数相加, 满足条件则放入结果中
+ * 注意数组中的数可以重复, 如何处理。
+ * 3sum：遍历选出一个数, target-这个数变为了目标, 则退化为2sum
+ * 4sum：如上, 先退化为3sum, 然后退化为2sum
+ */
 
 using namespace std;
 
