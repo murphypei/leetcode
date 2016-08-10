@@ -6,6 +6,13 @@
 /**
  * 思路：从数组的最后一位开始加1, 需要考虑进位, 如果第[0]位大于9, 则插入首位.
  */
+
+ #include <iostream>
+ #include <vector>
+ #include <cstdio>
+
+ using namespace std;
+
 class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) {
@@ -38,3 +45,10 @@ public:
         return digits;
     }
 };
+
+
+int main() {
+    cout << "hello world" << endl;
+    getchar();
+    return 0;
+}
