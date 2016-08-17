@@ -21,7 +21,6 @@ public:
         int MIN = 99999;
         DFS(root, MIN, 1);
         return MIN;
-
     }
     
     void DFS(TreeNode* root, int& MIN, int step) {
