@@ -1,3 +1,3 @@
-### leetcode和剑指offer
+### leetcode
 * leetcode with c++
 * collect leetcode practices
