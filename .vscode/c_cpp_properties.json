@@ -38,10 +38,16 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceRoot}",
+                "D:/MinGW/include",     
+                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/include/c++",
+                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/include/c++/mingw32",
+                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/include/c++/backward",
+                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/include",
+                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/../../../../include",
+                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/include-fixed",           
                 "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
                 "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
-                "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt",
-                "D:/MinGW/include/*"
+                "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt"
             ],
             "defines": [
                 "_DEBUG",
