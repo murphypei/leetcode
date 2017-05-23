@@ -5,8 +5,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "launchOptionType": "Local", // 调试器启动类型，这里只能为Local
-            "miDebuggerPath": "D:\\MinGW\\bin\\gdb.exe",
+            "miDebuggerPath": "D:\\Cygwin64\\bin\\gdb.exe",
             "program": "${file}.exe",
             "args": [],
             "stopAtEntry": false,

@@ -1,53 +1,14 @@
 {
     "configurations": [
         {
-            "name": "Mac",
-            "includePath": [
-                "${workspaceRoot}",
-                "/usr/include",
-                "/usr/local/include"
-            ],
-            "defines": [],
-            "browse": {
-                "path": [
-                    "/usr/include",
-                    "/usr/local/include"
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            }
-        },
-        {
-            "name": "Linux",
-            "includePath": [
-                "${workspaceRoot}",
-                "/usr/include",
-                "/usr/local/include"
-            ],
-            "defines": [],
-            "browse": {
-                "path": [
-                    "/usr/include",
-                    "/usr/local/include"
-                ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            }
-        },
-        {
             "name": "Win32",
             "includePath": [
                 "${workspaceRoot}",
-                "D:/MinGW/include",     
-                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/include/c++",
-                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/include/c++/mingw32",
-                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/include/c++/backward",
-                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/include",
-                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/../../../../include",
-                "d:/mingw/bin/../lib/gcc/mingw32/5.3.0/include-fixed",           
-                "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
-                "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
-                "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt"
+                "D:/Cygwin64/usr/include",
+                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include",
+                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++",
+                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/backward",
+                "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/debug"
             ],
             "defines": [
                 "_DEBUG",
@@ -55,9 +16,12 @@
             ],
             "browse": {
                 "path": [
-                    "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
-                    "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
-                    "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt"
+                    "${workspaceRoot}",
+                    "D:/Cygwin64/usr/include",
+                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include",
+                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++",
+                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/backward",
+                    "D:/Cygwin64/lib/gcc/x86_64-pc-cygwin/5.4.0/include/c++/debug"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
