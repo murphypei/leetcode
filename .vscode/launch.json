@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "miDebuggerPath": "D:\\Cygwin64\\bin\\gdb.exe",
-            "program": "${file}.exe",
+            "program": "${workspaceRoot}\\out.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceRoot}",
