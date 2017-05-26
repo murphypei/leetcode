@@ -24,10 +24,14 @@ public:
     // 在上面将vector的数存放在map中后，map会按照键值对其进行排序，内部维持一个红黑树
 
     for (map<int, int>::reverse_iterator it = mp.rbegin(); it != mp.rend(); it++, cnt++) {
-        if (cnt == 1) ans[it->second] = "Gold Medal";
-        else if (cnt == 2) ans[it->second] = "Silver Medal";
-        else if (cnt == 3) ans[it->second] = "Bronze Medal";
-        else ans[it->second] = to_string(cnt);
+        if (cnt == 1) 
+            ans[it->second] = "Gold Medal";
+        else if (cnt == 2) 
+            ans[it->second] = "Silver Medal";
+        else if (cnt == 3) 
+            ans[it->second] = "Bronze Medal";
+        else 
+            ans[it->second] = to_string(cnt);
     }
     
     return ans;
