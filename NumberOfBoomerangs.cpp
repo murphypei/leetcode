@@ -9,18 +9,33 @@
 class Solution {
 public:
     int numberOfBoomerangs(vector<pair<int, int>>& points) {
+        if(points.size() < 3)
+        {
+            return 0;
+        }
+        
         int res = 0;
-        for (int i = 0; i < points.size(); ++i) {
-            unordered_map<int, int> m;
-            for (int j = 0; j < points.size(); ++j) {
-                int a = points[i].first - points[j].first;
-                int b = points[i].second - points[j].second;
-                ++m[a * a + b * b];
+        for(int i = 0; i < points.size(); ++i)
+        {
+            unordered_map<int, int> distances;
+            for(int j = 0; j < points.size(); ++j)
+            {
+                distances[calcDistance(points[i], points[j])]++;
             }
-            for (auto it = m.begin(); it != m.end(); ++it) {
-                res += it->second * (it->second - 1);
+            
+            // 计算点i构成的所有回旋镖数量
+            for(auto it = distances.cbegin(); it != distances.cend(); ++it)
+            {
+                res += it->second *(it->second - 1);   
             }
         }
+        
         return res;
+    }
+    
+private:
+    int calcDistance(pair<int, int> &a, pair<int, int> &b)
+    {
+        return pow((a.first - b.first), 2) + pow((a.second - b.second), 2);
     }
 };
