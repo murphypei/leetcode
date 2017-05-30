@@ -5,15 +5,17 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
+            "launchOptionType":"Local",
+            "targetArchitecture": "x86_64",
             "miDebuggerPath": "D:\\Cygwin64\\bin\\gdb.exe",
             "program": "${workspaceRoot}\\out.exe",
             "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,                   // 设为true时程序将暂停在程序入口处
+            "cwd": "${workspaceRoot}",              // 调试程序时的工作目录
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "preLaunchTask": "g++",　　 // 调试会话开始前执行的任务，一般为编译程序，c++为g++, c为gcc
+            "preLaunchTask": "g++",　　              // 调试会话开始前执行的任务，一般为编译程序，c++为g++, c为gcc
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
