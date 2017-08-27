@@ -1,7 +1,7 @@
 /**
  * 八皇后问题：
  * 创建一个包含8个元素的数组，每个数组的第i个数表示第i行的棋子的列号。
- * 因为列和行不能重复，所以列号一定是0~7，可以求出数组的全排列，然后筛除对角线的排列。
+ * 因为列和行不能重复，所以列号一定是0~7，可以求出数组的全排列，然后剔除对角线的排列。
  * 
  * N皇后可以类推
  */
@@ -42,7 +42,7 @@ bool checkDiagonal(vector<int> &nums) {
     return true;
 }
 
-// 求全排列的方法
+// 求全排列的方法（递归）
 void permuation(vector<int> &nums, VecIt begin) {
     if(begin == nums.end()) {
         if(checkDiagonal(nums)) {
@@ -52,26 +52,12 @@ void permuation(vector<int> &nums, VecIt begin) {
 
     for(auto it = begin; it != nums.end(); ++it) {
         swap(*it, *begin);
-        VecIt iter = begin + 1;
-        permuation(nums, iter);
+        permuation(nums, begin + 1);
         swap(*it, *begin);
     }
 }
 
 int main() {
-
-    // vector<int> nums{1,2,3,4};
-    // permuation(nums, nums.begin());
-
-    // cout << result.size() << endl;
-
-    // for(auto &v : result) {
-    //     for(auto &i : v) {
-    //         cout << i << "\t";
-    //     }
-    //     cout << "\n";
-    // }
-
     cout << queues() << endl;
     getchar();
     return 0;
