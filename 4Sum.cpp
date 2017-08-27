@@ -1,4 +1,11 @@
-// 4 sum 的hash实现
+/**
+ * 在数组中寻找四个数之后为0的元素组
+ *
+ * 四个数看做两组数相加, 每组两个数
+ * 将数两两组合, 将两个数和相同的组合存入vector中, 然后map键为两个数的和, 值为vector
+ * 在map中寻找组合
+ * 注意相同元素的处理
+ */
 #include <iostream>
 #include <vector>
 #include <map>
@@ -8,12 +15,6 @@
 
 using namespace std;
 
-/**
- * 四个数看做两组数相加, 每组两个数
- * 将数两两组合, 将两个数和相同的组合存入vector中, 然后map键为两个数的和, 值为vector
- * 在map中寻找组合
- * 注意相同元素的处理
- */
 class Solution {
 public:
 	vector<vector<int> > fourSum(vector<int>& nums, int target) {
@@ -66,7 +67,8 @@ public:
 	void store(vector<int>& nums) {
 		if(nums.size() < 2)
 			return;
-		sort(nums.begin(), nums.end());
+		std::sort(nums.begin(), nums.end());
+		// 对于相等的元素，只保留一份，以排序之后靠前的元素为主。
 		for(size_t i = 0; i < nums.size(); ++i) {
 			if(i > 0 && nums[i-1] == nums[i])
 				continue;
