@@ -2,6 +2,7 @@
  * 10进制转7进制
  **/
 
+#include <vector>
 #include <memory>
 #include <string>
 #include <iostream>
@@ -10,18 +11,19 @@ using namespace std;
 
 class Solution {
 public:
-    string convertToBase7(int num)
+    int convertToBase7(int num)
     {
+        int result = 0;
         if(num >= 0)
         {
             int res = convert10ToN(num, 7);
-            return to_string(res);
         }
         else
         {
             int res = convert10ToN(-num, 7);
-            return "-" + to_string(res);
+            result =  0 - res;
         }
+        return result;
 
     }
 
