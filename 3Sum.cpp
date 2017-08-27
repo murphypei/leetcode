@@ -1,14 +1,16 @@
-// Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+/**
+ * 给定一个数组，寻找数组中三个数之和为0的元素组
+ * 
+ * 思路：先将数组排序，然后遍历取出一个数，再在这个数的后面的子数组中寻找两个数（双指针从两头开始遍历）
+ */ 
 
-// Note:
-// Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c)
-// The solution set must not contain duplicate triplets.
-//     For example, given array S = {-1 0 1 2 -1 -4},
+#include <vector>
+#include <algorithm>
+#include <memory>
+#include <iostream>
+#include <iterator>
 
-//     A solution set is:
-//     (-1, 0, 1)
-//     (-1, -1, 2)
-
+using namespace std;
 
 class Solution {
 public:
@@ -23,10 +25,13 @@ public:
         }
         else
         {
-			quickSort(nums.begin(), nums.end());
-
+			// 对原数组排序
+			std::sort(nums.begin(), nums.end());
+			
+			// 遍历排序后的数组，取出一个元素
             for(size_t i = 0; i < nums.size() - 2; ++i)
             {
+				// 在后面的子数组中查找
 				if(i > 0 && nums[i] == nums[i-1])
 					continue;
                 int begin = i + 1;
@@ -36,7 +41,8 @@ public:
         }
         return result;
     }
-    
+	
+	// 在子数组中查找
     void find(int begin, int end, vector<int>& nums, int tar)
     {
 		int low = begin, high = end;
@@ -111,3 +117,19 @@ public:
         b = tmp;
     }
 };
+
+
+int main() 
+{
+	vector<int> nums = {-3,-2,-1,0,-1,-2,1,2,3,4,5,6};
+	shared_ptr<Solution> sptr = make_shared<Solution>();
+	vector<vector<int>> result = sptr->threeSum(nums);
+	for(auto &vec : result) 
+	{
+		std::copy(vec.cbegin(), vec.cend(), ostream_iterator<int>(cout, " "));
+		cout << endl;
+	}
+
+	getchar();
+	return 0;
+}
