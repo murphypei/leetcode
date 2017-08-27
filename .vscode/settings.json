@@ -29,5 +29,8 @@
         "utility": "cpp",
         "algorithm": "cpp",
         "cmath": "cpp"
-    }
+    },
+    "clang.cxxflags": [
+        "-std=c++11"
+    ]
 }
