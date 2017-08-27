@@ -1,6 +1,10 @@
 /**
- * 将两个用字符串表示的数字进行相加，输出表示结果的字符串
+ * 大数相加：将数用字符串表示，则变成将两个用字符串表示的数字进行相加，输出表示结果的字符串
  */
+
+#include <string>
+
+using namespace std;
 
 class Solution {
 public:
