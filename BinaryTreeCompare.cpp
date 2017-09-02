@@ -1,23 +1,25 @@
 /**
  * 比较两个二叉树是否相等
- * 不是用递归，利用层序遍历的思想，利用两个队列来辅助进行层序遍历，对每一层的节点个数和数据进行比较
+ * 
+ * 思路：不是用递归，利用层序遍历的思想，利用两个队列来辅助进行层序遍历，对每一层的节点个数和数据进行比较
  */
 
 #include <queue>
+#include <iostream>
 
 using namespace std;
 
-struct TreeNode {
+struct BTreeNode {
     int val;
     BTreeNode* left;
     BTreeNode* right;
 
     BTreeNode(int n):val(n), left(nullptr), right(nullptr) {}
-}
+};
 
 class Solution {
 public:
-    bool isSameTree(TreeNode* root1, TreeNode* root2) {
+    bool isSameTree(BTreeNode* root1, BTreeNode* root2) {
         if (root1 == nullptr && root2 == nullptr) {
             return true;
         }
@@ -25,8 +27,8 @@ public:
             return false;
         }
 
-        queue<TreeNode*> q1;
-        queue<TreeNode*> q2;
+        queue<BTreeNode*> q1;
+        queue<BTreeNode*> q2;
 
         q1.push(root1);
         q2.push(root2);
@@ -42,8 +44,8 @@ public:
 
             int cnt = 0;
             while(cnt++ < q1.size()) {
-                TreeNode* node1 = q1.front();
-                TreeNode* node2 = q2.front();
+                BTreeNode* node1 = q1.front();
+                BTreeNode* node2 = q2.front();
 
                 if(node1->val != node2->val) {
                     cout << "node1->val != node2->val" << endl;
