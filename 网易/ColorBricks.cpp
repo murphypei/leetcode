@@ -22,6 +22,7 @@ ABAB
 #include <string>
 #include <array>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -48,6 +49,20 @@ int ColorBricks(string &s) {
     } else {
         return 0;
     }
+}
+
+int ColorBricks2(string s) {
+    sort(s.begin(), s.end());
+    s.erase(unique(s.begin(), s.end()), s.end());
+    int cnt = s.size();
+    if(cnt == 1) {
+        return 1;
+    } else if(cnt == 2) {
+        return 2;
+    } else {
+        return 0;
+    }
+
 }
 
 int main() {
