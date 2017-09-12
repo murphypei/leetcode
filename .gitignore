@@ -1,4 +1,5 @@
 *.exe
 *.out
+.vscode
 clang-4.0.exe.stackdump
 out.exe.stackdump
