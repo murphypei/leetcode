@@ -9,15 +9,13 @@
 #include <iostream>
 
 using namespace std;
+
 class Solution {
     
 public:
-    vector< vector<int> > result;
+    vector<vector<int>> result;
 
     vector<vector<int>> permute(vector<int>& nums) {
-        
-        vector<int> tmp;
-        
         if(nums.size() <= 1)
         {
             result.push_back(nums);
@@ -29,36 +27,21 @@ public:
     
     }
     
-    void dfs(int index, vector<int> nums)
+    void dfs(int index, vector<int>& nums)
     {
         if(index == nums.size())
         {
-            cout << "---" <<endl;
-            vector<int> tmp;
-            for(int i = 0; i < nums.size(); ++i)
-            {
-				tmp.push_back(nums[i]);
-            }
-            result.push_back(tmp);
+            result.push_back(vector<int>(nums.begin(), nums.end()));
             return;
         }
         
         // 将nums[index] 与后面的每个数交换，然后递归遍历交换之后的序列
         for(int j = index; j < nums.size(); ++j)
         {
-            cout << "***" <<endl;
-            swap(nums[j], nums[index]);
-            cout << index + 1 << endl;
+            std::swap(nums[j], nums[index]);
             dfs(index+1, nums);  
-            //swap(nums[j], nums[index]);
+            std::swap(nums[j], nums[index]);
         }
-    }
-    
-    void swap(int &a, int &b)
-    {
-        int tmp = a;
-        a = b;
-        b = tmp;
     }
 };
 
