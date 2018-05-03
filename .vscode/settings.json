@@ -28,7 +28,8 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "algorithm": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "__functional_03": "cpp"
     },
     "clang.cxxflags": [
         "-std=c++11"
