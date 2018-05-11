@@ -5,14 +5,22 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        int i, j;
-        for(i = 0; i < nums.size() - 1; i++) {
-            for(j = nums.size() - 1; j > i; j--) {
-                if(nums[i] + nums[j] == target) {
-                    return vector<int>{i,j};
-                }
+        vector<int> tmp(nums.begin(), nums.end());
+        std::sort(tmp.begin(), tmp.end());
+        int i = 0;
+        int j = tmp.size() - 1;
+        while(i < j) {
+            if(tmp[i] + tmp[j] == target) {
+                i = std::find(nums.begin(), nums.end(), tmp[i]) - nums.begin();
+                j = nums.rend() - std::find(nums.rbegin(), nums.rend(), tmp[j]) - 1;
+                return vector<int>{i,j};
+            }
+            else if(tmp[i] + tmp[j] > target) {
+                j--;
+            }
+            else {
+                i++;
             }
         }
-        
     }
 };

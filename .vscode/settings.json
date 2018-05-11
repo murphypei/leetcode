@@ -36,7 +36,8 @@
         "bitset": "cpp",
         "iterator": "cpp",
         "string_view": "cpp",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "ios": "cpp"
     },
     "clang.cxxflags": [
         "-std=c++11"
