@@ -1,6 +1,13 @@
-class Solution {
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+class Solution
+{
 public:
-    int threeSumClosest(vector<int>& nums, int target) {
+    int threeSumClosest(vector<int> &nums, int target)
+    {
         unsigned int closest_distance = std::numeric_limits<unsigned int>::max(), distance = 0;
         int sum = 0, closest_sum = 0;
         std::sort(nums.begin(), nums.end());
@@ -10,7 +17,7 @@ public:
             {
                 continue;
             }
-            for(int j = i + 1, k = nums.size() - 1; j < k;)
+            for (int j = i + 1, k = nums.size() - 1; j < k;)
             {
                 if (j > i + 1 && nums[j] == nums[j - 1])
                 {

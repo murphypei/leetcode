@@ -1,6 +1,13 @@
-class Solution {
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+class Solution
+{
 public:
-    int removeDuplicates(vector<int>& nums) {
+    int removeDuplicates(vector<int> &nums)
+    {
         int i = 0;
         for (int j = 1; j < num.size(); ++j)
         {

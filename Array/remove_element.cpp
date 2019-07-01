@@ -1,6 +1,13 @@
-class Solution {
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+class Solution
+{
 public:
-    int removeElement(vector<int>& nums, int val) {
+    int removeElement(vector<int> &nums, int val)
+    {
         if (nums.empty())
         {
             return 0;

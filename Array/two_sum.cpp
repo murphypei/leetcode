@@ -1,9 +1,17 @@
-class Solution {
+#include <algorithm>
+#include <unordered_map>
+#include <vector>
+
+using namespace std;
+
+class Solution
+{
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
         std::unordered_map<int, int> temp;
         int m = 0, n = 0;
-        for(int i = 0; i < nums.size(); ++i)
+        for (int i = 0; i < nums.size(); ++i)
         {
             auto other = temp.find(target - nums[i]);
             if (other != temp.end())
