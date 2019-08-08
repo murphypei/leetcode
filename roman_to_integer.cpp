@@ -1,20 +1,30 @@
-class Solution {
-public:
-    int romanToInt(string s) {
+#include <string>
 
+using namespace std;
+
+class Solution
+{
+public:
+    int romanToInt(string s)
+    {
         int result = 0;
-        for(int i = 0; i < s.size(); ++i) {
-            switch(s[i]) {
+        for (int i = 0; i < s.size(); ++i)
+        {
+            switch (s[i])
+            {
             case 'I':
-                if(s[i+1] == 'V') {
+                if (s[i + 1] == 'V')
+                {
                     result += 4;
                     ++i;
                 }
-                else if(s[i+1] == 'X') {
+                else if (s[i + 1] == 'X')
+                {
                     result += 9;
-                    ++i;                    
+                    ++i;
                 }
-                else {
+                else
+                {
                     result += 1;
                 }
                 break;
@@ -22,15 +32,18 @@ public:
                 result += 5;
                 break;
             case 'X':
-                if(s[i+1] == 'L') {
+                if (s[i + 1] == 'L')
+                {
                     result += 40;
                     ++i;
                 }
-                else if(s[i+1] == 'C') {
+                else if (s[i + 1] == 'C')
+                {
                     result += 90;
-                    ++i;                    
+                    ++i;
                 }
-                else {
+                else
+                {
                     result += 10;
                 }
                 break;
@@ -38,15 +51,18 @@ public:
                 result += 50;
                 break;
             case 'C':
-                if(s[i+1] == 'D') {
+                if (s[i + 1] == 'D')
+                {
                     result += 400;
                     ++i;
                 }
-                else if(s[i+1] == 'M') {
+                else if (s[i + 1] == 'M')
+                {
                     result += 900;
-                    ++i;                    
+                    ++i;
                 }
-                else {
+                else
+                {
                     result += 100;
                 }
                 break;
@@ -59,6 +75,5 @@ public:
             }
         }
         return result;
-        
     }
 };
