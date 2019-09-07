@@ -1,5 +1,4 @@
-#ifndef LEETCODE_STRUCTS_H_
-#define LEETCODE_STRUCTS_H_
+#pragma once
 
 struct ListNode
 {
@@ -7,5 +6,3 @@ struct ListNode
     ListNode *next;
     ListNode(int x) : val(x), next(nullptr) {}
 };
-
-#endif LEETCODE_STRUCTS_H_
