@@ -19,6 +19,7 @@ public:
             }
             else
             {
+                // Add dp[j] is very import.
                 dp[i] = dp[i - 1] + 2 + dp[j];
                 res = max(res, dp[i]);
             }
