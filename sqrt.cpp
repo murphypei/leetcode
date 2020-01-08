@@ -11,7 +11,7 @@ public:
         int mid = -1;
         while (left < right)
         {
-            mid = (right + left) / 2;
+            mid = left + (right - left) / 2;
             if (x / mid >= mid)
             {
                 left = mid + 1;

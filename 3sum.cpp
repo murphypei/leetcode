@@ -8,8 +8,7 @@ class Solution
 public:
     vector<vector<int>> threeSum(vector<int> &nums)
     {
-    std:
-        vector<std::vector<int>> res;
+        std::vector<std::vector<int>> res;
         if (nums.size() >= 3)
         {
             std::sort(nums.begin(), nums.end());
