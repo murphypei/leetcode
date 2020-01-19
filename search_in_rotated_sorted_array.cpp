@@ -17,13 +17,19 @@ public:
             {
                 return mid;
             }
-            if (nums[mid] >= nums[left])
+
+            // 思路一定要清晰：二分查找的关键是知道什么时候让 left = mid + 1，什么时候让 right = mid - 1。
+            // 不管 mid 落在哪里，[left, mid] 和 [mid, right] 必然有一个是有序的。
+
+            // 假如 [left, mid] 有序。
+            if (nums[mid] >= nums[left]) // 因为没有重复元素，所以等号其实没用。
             {
                 if (target >= nums[left] && target <= nums[mid])
                     right = mid - 1;
                 else
                     left = mid + 1;
             }
+            // [mid, right] 有序。
             else
             {
                 if (target <= nums[right] && target >= nums[mid])
