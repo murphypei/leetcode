@@ -1,4 +1,4 @@
-#include "leetcode_structs.h"
+#include "utils.h"
 #include <vector>
 
 class Solution
