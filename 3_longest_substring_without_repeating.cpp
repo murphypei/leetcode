@@ -12,8 +12,8 @@ public:
         int n = s.size();
         if (n == 0)
             return 0;
-        unordered_map<char, int> m;
-        int left = 0, len = 0;
+        unordered_map<char, int> m; // sliding window
+        int left = 0, len = 0;      // left is the windows bounding.
         for (int i = 0; i < n; i++)
         {
             m[s[i]]++;
