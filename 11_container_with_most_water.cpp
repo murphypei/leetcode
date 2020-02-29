@@ -15,7 +15,7 @@ public:
         {
             auto min_elem = std::min(*front_iter, *rear_iter);
             auto area = min_elem * std::distance(front_iter, rear_iter);
-            area = std::max(area, max_area);
+            max_area = area > max_area ? area : max_area;
             if (*rear_iter < *front_iter)
             {
                 rear_iter--;

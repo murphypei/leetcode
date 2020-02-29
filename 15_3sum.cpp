@@ -8,7 +8,7 @@ class Solution
 public:
     vector<vector<int>> threeSum(vector<int> &nums)
     {
-        std::vector<std::vector<int>> res;
+        vector<vector<int>> res;
         if (nums.size() >= 3)
         {
             std::sort(nums.begin(), nums.end());
@@ -30,22 +30,20 @@ public:
                         k--;
                         continue;
                     }
-                    if (nums[j] + nums[k] == -nums[i])
+
+                    if (nums[j] + nums[k] + nums[i] == 0)
                     {
-                        res.emplace_back(std::vector<int>{nums[i], nums[j], nums[k]});
+                        res.emplace_back(vector<int>{nums[i], nums[j], nums[k]});
                         j++;
                         k--;
-                        continue;
                     }
-                    else if (nums[j] + nums[k] > -nums[i])
+                    else if (nums[j] + nums[k] + nums[i] > 0)
                     {
                         k--;
-                        continue;
                     }
                     else
                     {
                         j++;
-                        continue;
                     }
                 }
             }
