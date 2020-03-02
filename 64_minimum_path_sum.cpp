@@ -5,6 +5,7 @@ using namespace std;
 class Solution
 {
 public:
+    // 动态规划，到达每个点的最小值就是其左边和上面到达当前点的最小值。
     int minPathSum(vector<vector<int>> &grid)
     {
         if (grid.empty() || grid[0].empty())

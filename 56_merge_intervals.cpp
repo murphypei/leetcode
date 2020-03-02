@@ -1,11 +1,9 @@
+#include <algorithm>
 #include <vector>
 
 using namespace std;
 
-bool collection_sort(const vector<int> &a, const vector<int> &b)
-{
-    return a[0] < b[0];
-}
+bool collection_sort(const vector<int> &a, const vector<int> &b) { return a[0] < b[0]; }
 
 class Solution
 {
