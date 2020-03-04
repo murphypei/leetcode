@@ -6,6 +6,7 @@ using namespace std;
 class Solution
 {
 public:
+    // 简单的回溯和深度优先搜索
     bool exist(vector<vector<char>> &board, string word)
     {
         if (word.empty())
@@ -43,11 +44,13 @@ public:
     bool dfs_search(int row, int col, int index, const string &word, const vector<vector<char>> &board,
                     vector<vector<bool>> &used)
     {
+        // 如果全部字符被找到了，返回 true。
         if (index == word.size())
         {
             return true;
         }
 
+        // 分别对相邻的 4 个字符做比较判断，并递归寻找下一个。
         if (row - 1 >= 0 && !used[row - 1][col] && board[row - 1][col] == word[index])
         {
             used[row - 1][col] = true;
@@ -96,6 +99,8 @@ public:
                 used[row][col + 1] = false;
             }
         }
+
+        // 如果 4 个字符都没找到，则返回 false。
         return false;
     }
 };
