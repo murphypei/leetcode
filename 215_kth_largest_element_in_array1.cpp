@@ -42,7 +42,7 @@ public:
             // 注意这里 i 和 j 的处理，一定要保证 i 和 j 在 外层 while 中更新，否则死循环。
             while (++i <= hi && nums[i] < v)
                 ;
-            while (--j >= lo && nums[j] > v)
+            while (--j > lo && nums[j] > v)
                 ;
             if (j <= i)
             {
