@@ -14,7 +14,7 @@
 * 二叉树
     * [98. Validate Binary Search Tree](98_validate_binary_search_tree.cpp)：（迭代）中序遍历二叉树。
     * [145. Binary Tree Postorder Traversal](145_binary_tree_postorder_traversal.cpp)：（迭代）后序遍历二叉树。
-    * [101. Symmetric Tree](101_symmetric_tree_2.cpp)：二叉树层序遍历（队列辅助）。
+    * [102. Binary Tree Level Order Traversal   ](102_binary_tree_level_order_traversal.cpp)：二叉树层序遍历（队列辅助）。
 * 字符串
     * [8. String to Integer (atoi)](8_atoi.cpp)：字符串转整数。
 * 队列和栈
