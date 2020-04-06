@@ -14,6 +14,7 @@
 * 二叉树
     * [98. Validate Binary Search Tree](98_validate_binary_search_tree.cpp)：（迭代）中序遍历二叉树。
     * [145. Binary Tree Postorder Traversal](145_binary_tree_postorder_traversal.cpp)：（迭代）后序遍历二叉树。
+    * [101. Symmetric Tree](101_symmetric_tree_2.cpp)：二叉树层序遍历（队列辅助）。
 * 字符串
     * [8. String to Integer (atoi)](8_atoi.cpp)：字符串转整数。
 * 队列和栈
@@ -22,3 +23,7 @@
     * [322. Coin Change](322_coin_change.cpp)：零钱兑换，简单动态规划。
 * BFS
     * [365. Water and Jug Problem](365_water_and_jug_problem.cpp)：典型 BFS 应用（超时了，因为这题需要用[数学公式](365_water_and_jug_problem_2.cpp)求解）。
+* DFS
+    * [695. Max Area of Island](695_max_area_of_islang.cpp)：典型的 DFS 应用。
+* 双指针
+    * [876. Middle of the Linked List](876_middle_linked_list.cpptouch)：快慢指针找中间节点
