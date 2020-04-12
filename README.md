@@ -16,6 +16,7 @@
     * [145. Binary Tree Postorder Traversal](145_binary_tree_postorder_traversal.cpp)：（迭代）后序遍历二叉树。
     * [102. Binary Tree Level Order Traversal   ](102_binary_tree_level_order_traversal.cpp)：二叉树层序遍历（队列辅助）。
     * [105. Construct Binary Tree from Preorder and Inorder Traversal](105_construct_binary_tree_from_preorder_inorder_traversal.cpp)：根据前序和中序数组还原二叉树。
+    * [124. Binary Tree Maximum Path Sum](124_binary_tree_maximum_path_sum.cpp)：二叉树最大路径和。
 * 字符串
     * [8. String to Integer (atoi)](8_atoi.cpp)：字符串转整数。
 * 队列和栈
