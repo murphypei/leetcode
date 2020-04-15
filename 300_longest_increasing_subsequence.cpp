@@ -16,6 +16,7 @@ public:
         for (int i = 1; i < nums.size(); ++i)
         {
             int tmp_max_len = 0;
+            // 在当前元素之前比当前元素小的元素中，找到一个序列长度最大。
             for (int j = 0; j < i; ++j)
             {
                 if (nums[i] > nums[j])

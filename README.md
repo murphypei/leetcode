@@ -22,9 +22,12 @@
 * 队列和栈
     * [225. Implement Stack using Queues](225_implement_stack_using_queues.cpp)：用队列实现栈。
 * 动态规划（DP）
+    * [1143. Longest Common Subsequence](1143_longest_common_subsequence.cpp)：经典，最长公共子序列。
+    * [128. Longest Consecutive Sequence]()：最长上升序列。
     * [322. Coin Change](322_coin_change.cpp)：零钱兑换，简单动态规划。
 * BFS
     * [365. Water and Jug Problem](365_water_and_jug_problem.cpp)：典型 BFS 应用（超时了，因为这题需要用[数学公式](365_water_and_jug_problem_2.cpp)求解）。
+    * [542. 01 Matrix](542_01_matrix.cpp)：BFS 寻找距离。
 * DFS
     * [695. Max Area of Island](695_max_area_of_islang.cpp)：典型的 DFS 应用。
 * 双指针
