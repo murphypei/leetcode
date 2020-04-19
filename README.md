@@ -10,7 +10,7 @@
     * [912. Sort an Array](912_sort_an_array.cpp)
     * [215. Kth Largest Element in an Array](215_kth_largest_element_in_array.cpp)：快排分区法求第 K 大元素。
 * 堆排序
-    * [215. Kth Largest Element in an Array](215_kth_largest_element_in_array_2.cpp)：最大堆求第 K 大元素
+    * [215. Kth Largest Element in an Array](215_kth_largest_element_in_array_2.cpp)：最大堆求第 K 大元素。
 * 二叉树
     * [98. Validate Binary Search Tree](98_validate_binary_search_tree.cpp)：（迭代）中序遍历二叉树。
     * [145. Binary Tree Postorder Traversal](145_binary_tree_postorder_traversal.cpp)：（迭代）后序遍历二叉树。
@@ -28,7 +28,9 @@
 * BFS
     * [365. Water and Jug Problem](365_water_and_jug_problem.cpp)：典型 BFS 应用（超时了，因为这题需要用[数学公式](365_water_and_jug_problem_2.cpp)求解）。
     * [542. 01 Matrix](542_01_matrix.cpp)：BFS 寻找距离。
+    * [139. Word Break](139_word_break.cpp)：经典字典树搜索，BFS 解决。
 * DFS
     * [695. Max Area of Island](695_max_area_of_islang.cpp)：典型的 DFS 应用。
 * 双指针
-    * [876. Middle of the Linked List](876_middle_linked_list.cpptouch)：快慢指针找中间节点
+    * [876. Middle of the Linked List](876_middle_linked_list.cpp)：快慢指针找中间节点。
+    * [141. Linked List Cycle](141_linked_list_cycle.cpp)：快慢指针判断链表是否有环。
