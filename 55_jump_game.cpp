@@ -7,28 +7,25 @@ class Solution
 public:
     bool canJump(vector<int> &nums)
     {
-        if (nums.empty())
+        if (nums.size() <= 1)
         {
             return true;
         }
-        // 从后向前跳
-        return jumpTo(nums, nums.size() - 1);
-    }
-
-    bool jumpTo(vector<int> &nums, int target_index)
-    {
-        // 如果从开始位置能达到当前位置，则说明可以（因为是从后向前回溯的）
-        if (nums[0] >= target_index)
+        // record the longest length that can be arrived.
+        int longest = 0;
+        for (int i = 0; i < nums.size() - 1; ++i)
         {
-            return true;
-        }
-        // 对当前位置，寻找每一个可能的起点。i 表示（到达当前位置的）起点位置
-        for (int i = target_index - 1; i >= 0; --i)
-        {
-            // nums[i] >= target_index-i 表示从 i 能够达到 target_index
-            if (nums[i] >= target_index - i)
+            // ensurance current position can arrive.
+            if (longest < i)
             {
-                return jumpTo(nums, i);
+                return false;
+            }
+            // update longest record
+            longest = std::max(longest, nums[i] + i);
+            // arrive at end
+            if (longest >= nums.size() - 1)
+            {
+                return true;
             }
         }
         return false;

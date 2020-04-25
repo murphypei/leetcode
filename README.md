@@ -11,6 +11,8 @@
     * [215. Kth Largest Element in an Array](215_kth_largest_element_in_array.cpp)：快排分区法求第 K 大元素。
 * 堆排序
     * [215. Kth Largest Element in an Array](215_kth_largest_element_in_array_2.cpp)：最大堆求第 K 大元素。
+* 归并排序
+    * [148. Sort List](148_sort_list.cpp)：利用归并做链表排序（经典）。
 * 二叉树
     * [98. Validate Binary Search Tree](98_validate_binary_search_tree.cpp)：（迭代）中序遍历二叉树。
     * [145. Binary Tree Postorder Traversal](145_binary_tree_postorder_traversal.cpp)：（迭代）后序遍历二叉树。
@@ -34,3 +36,4 @@
 * 双指针
     * [876. Middle of the Linked List](876_middle_linked_list.cpp)：快慢指针找中间节点。
     * [141. Linked List Cycle](141_linked_list_cycle.cpp)：快慢指针判断链表是否有环。
+    * [142. Linked List Cycle II](142_linked_list_cycle2.cpp)：快慢指针判断链表环的入口（经典）。
