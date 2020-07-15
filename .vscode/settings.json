@@ -45,6 +45,7 @@
         "iterator": "cpp",
         "numeric": "cpp",
         "unordered_set": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "list": "cpp"
     }
 }
