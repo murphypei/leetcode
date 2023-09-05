@@ -17,7 +17,7 @@ public:
     for (int i = 0; i < rows; ++i) {
       dp[i][0] = matrix[i][0] - '0';
       max_side = max(max_side, dp[i][0]);
-    }
+    } 
     // printf("++ max_side: %d\n", max_side);
     for (int i = 0; i < cols; ++i) {
       dp[0][i] = matrix[0][i] - '0';
