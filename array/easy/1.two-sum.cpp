@@ -1,16 +1,17 @@
-#include <algorithm>
-#include <unordered_map>
-#include <vector>
+/*
+ * @lc app=leetcode id=1 lang=cpp
+ *
+ * [1] Two Sum
+ */
 
-using namespace std;
-
+// @lc code=start
 class Solution
 {
 public:
     vector<int> twoSum(vector<int> &nums, int target)
     {
         std::unordered_map<int, int> temp;
-        int m = 0, n = 0;
+        int                          m = 0, n = 0;
         for (int i = 0; i < nums.size(); ++i)
         {
             auto other = temp.find(target - nums[i]);
@@ -28,3 +29,4 @@ public:
         return vector<int>{m, n};
     }
 };
+// @lc code=end
